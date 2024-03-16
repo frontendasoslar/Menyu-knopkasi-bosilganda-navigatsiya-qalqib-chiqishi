@@ -1,0 +1,131 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+
+/* O'rab turuvchi element klaslari berilayapdi */
+.section {
+  /* O'rab turuvchi element eni */
+  height: 100vh;
+  /* O'rab turuvchi elemeny orqa foni */
+  background-color: #7b1fa2;
+  /* O'rab turuvchi element ichidagi elementlarni o'rtaga keltirish stillari */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Link stillari */
+.menu-btn {
+  /* Link elementi block tipdagi element bo'lganligi uchun display: block; berilayapdi */
+  display: block;
+  /* Linkning o'lchamlari */
+  width: 50px;
+  height: 50px;
+  /* Linkning orqa foni */
+  background-color: #fff;
+  /* Linkni dumaloq qilish uchun */
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Span, undan keyin va oldin stillar */
+.span,
+.span::before,
+.span::after {
+ /* Span elementi otasiga nisbatan joylashishi uchun position: absolute; berilayapdi */
+ position: absolute;
+ /* Span elementi tepadan 50% joy tashlab joylashayapdi va tepadagi element bilan orasi -1px erilayapdi */
+ top: 50%; margin-top: -1px;
+ /* Span elementining o'lchamlari */
+ width: 20px;
+ height: 1px;
+ /* Span elementining orqa foni */
+ background-color: #222;
+}
+
+/* Span elementi holatini o'zgartirishi uchun ketadigan vat uchun kiritilayapdi */
+.span::before,
+.span::after {
+  content: '';
+  display: block;
+  transition: 0.5s;
+}
+
+/* Span elementi pastga 5px tushayapdi */
+.span::before {
+  transform: translateY(-5px);
+}
+
+/* Span elementi tepaga 5px chiqayapdi */
+.span::after {
+  transform: translateY(5px);
+}
+
+
+
+
+/* Strelka ikonkasi uchun klaslar */
+.span-btn::before {
+  transform: rotate(-35deg);
+  width: 10px;
+  transform-origin: left top;
+}
+
+.span-btn::after {
+  transform: rotate(35deg);
+  width: 10px;
+  transform-origin: left bottom;
+}
+
+
+/* Menyu knopkasi va linklar yonmayon turushi uchun kiritilgan klaslar */
+.menu-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Linklaruchun berilgan klaslar */
+.menu-nav-link {
+ display: inline-block;
+ text-decoration: none;
+ color: #222;
+ margin-right: 20px;
+}
+
+/* Linklarni o'rab turuvchi qutti klaslari */
+.menu-nav {
+  /* o'rab turuvchining orqa foni */
+  background-color: #fff;
+  /* o'rab turuvchining eni */
+  height: 50px;
+  line-height: 50px;
+  /* o'rab turuvchining paddinglari */
+  padding-left: 20px;
+  padding-right: 40px;
+  /* o'rab turuvchining menyu knopkasi orasidagi masofa */
+  margin-right: -25px;
+  /* o'rab turuvchining chap tomoning border radiuslari */
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  /* o'rab turuvchining holatini o'zgartirishi uchun ketadigan vaqt */
+  transition: 0.5s;
+  /* o'rab turuvchining Qysi tomonga nisbatan o'zgarishi */
+  transform-origin: right center;
+  /* o'rab turuvchining menyu knopkasi bosulgunga qadar holati */
+  transform: scaleX(0) translateX(0%);
+  opacity: 0;
+}
+
+/* Menyu knpkasi bosilganda o'rab turuvchining klaslistiga qo'shiladigan klas */
+.menu-nav_active {
+  /* Menyu knopkasi bosilganda o'rab turuvchining holato o'zgarishi */
+  transform: scaleX(1) translateX(0%);
+  opacity: 1;
+}
